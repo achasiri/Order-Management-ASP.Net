@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Sample Form</title>
+ <link rel="stylesheet" type="text/css" href="style.css">
+<script src="scriptfile.js"></script>
+</head>
+
+<body>
+<div >
+<form method="post" name="orderForm"  onsubmit="return CalculatePrice();">
+<h2> BearCat Icecream Order Form </h2>
+  Flavor<select name="flavors" id="flavorValue">
+    <option value="vanilla">Vanilla</option>
+    <option value="chocolate">Chocolate</option>
+    <option value="minchocolatechip">Mint Chocolate Chip</option>
+    <option value="srrawberry">Strawberry</option>
+  </select>
+  <br>
+  <fieldset class="fieldset"> 
+  <legend>Size</legend>
+  <input type="radio" name="size" id="small" value="Small" checked> Small<br>
+  <input type="radio" name="size" id="medium" value="Medium"> Medium<br>
+  <input type="radio" name="size" id="large" value="Large"> Large
+  </fieldset>
+  <br>
+  Quantity(1-10)<input type="number" name="quantity" id="quantity" step="1">
+  <br>
+  <fieldset class="fieldset">
+  <legend>Extra Topping</legend>
+  <input type="checkbox" id="saltercaramel" value="saltedcaramel"> Salted Caramel<br>
+  <input type="checkbox" id="sugarfreestawberry" value="sugarfreestawberry"> SugarFree Strawberry 
+  </fieldset>
+  <br>
+ <input type="submit" value="Order" name="submit">
+ 
+</form>
+</div>
+<div class="output" id="cost">
+ </div><br>
+  <div class="output" id="time">
+ </div>
+</body>
+</html>
+
+
