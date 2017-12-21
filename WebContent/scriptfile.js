@@ -65,6 +65,7 @@ function CalculatePrice() {
 	}
 var total_cost = quantity_value * (flavor_price + size_price + extra_cost);
 
+
 var max=45;
 var min=25;
 
