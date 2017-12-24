@@ -11,5 +11,10 @@ body {
  .output{
 	 color: blue;
 	 font-size: 20px;
+	  text-align: center;
  }
+ img {
+    width:500px;
+    margin-left:80%;
+}
 	

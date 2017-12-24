@@ -1,49 +1,76 @@
-
-
 <!DOCTYPE html>
 <html>
-
 <head>
-<title>Sample Form</title>
- <link rel="stylesheet" type="text/css" href="style.css">
-<script src="scriptfile.js"></script>
-</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="script.js">
 
+
+ </script>
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
 <body>
-<div >
-<form method="post" name="orderForm"  onsubmit="return CalculatePrice();">
-<h2> BearCat Icecream Order Form </h2>
-  Flavor<select name="flavors" id="flavorValue">
-    <option value="vanilla">Vanilla</option>
-    <option value="chocolate">Chocolate</option>
-    <option value="minchocolatechip">Mint Chocolate Chip</option>
-    <option value="srrawberry">Strawberry</option>
-  </select>
-  <br>
-  <fieldset class="fieldset"> 
-  <legend>Size</legend>
-  <input type="radio" name="size" id="small" value="Small" checked> Small<br>
-  <input type="radio" name="size" id="medium" value="Medium"> Medium<br>
-  <input type="radio" name="size" id="large" value="Large"> Large
-  </fieldset>
-  <br>
-  Quantity(1-10)<input type="number" name="quantity" id="quantity" step="1">
-  <br>
-  <fieldset class="fieldset">
-  <legend>Extra Topping</legend>
-  <input type="checkbox" id="saltercaramel" value="saltedcaramel"> Salted Caramel<br>
-  <input type="checkbox" id="sugarfreestawberry" value="sugarfreestawberry"> SugarFree Strawberry 
-  </fieldset>
-  <br>
- <input type="submit" value="Order" name="submit">
- 
-</form>
-</div>
-<div class="output" id="cost">
- </div><br>
-  <div class="output" id="time">
+
+	<h2 align="center">Bearcat Ice Cream Order Form</h2>
+	<form>
+	<table align="center">
+	<tr>
+		<td>Flavor</td>
+		<td>
+			<select name="flavours" id="flavours" onchange="document.getElementById('myimage').src = colorUrlMap[this.value]; myFlavorsSelected()" >
+			    <option value="default" selected>select your flavor</option>
+				<option value="chocolate">Chocolate</option>
+				<option value="mint">Mint Chocolate Chip</option>
+				<option value="strawberry">Strawberry</option>
+				<option value="vanilla">Vanilla</option>
+			</select>
+			<script>
+var colorUrlMap = {
+"default": "icecream.jpg",
+    "chocolate": "choco.jpg",
+    "mint" : "mintchoco.jpg",
+	"strawberry" : "strawberry.jpg",
+	"vanilla" : "vanilla.jpg"
+};
+</script>
+		</td>
+	</tr>
+	<tr>
+		<td>Size</td>
+		<td onchange="radioSelection()">			
+			<input type="radio" name="sizeVal" id="size1" value="small"/> Small<br>
+			<input type="radio" name="sizeVal" id="size2" value="medium"/> Medium<br>
+			<input type="radio" name="sizeVal" id="size3" value="large"/> Large<br>			
+		</td>
+	</tr>
+	<tr>
+		<td>Quantity(1-10)</td>
+		<td>
+			<input onchange="inputSelection()" type="number" min="1" max="10" step="1" id="quantity" value=""/>
+			<span id="errorMessage"></span>
+		</td>
+	</tr>
+	<tr>
+		<td>Extra Topping</td>
+		<td onchange="toppingsSelection()">
+			<input type="checkbox" name="topping" value="salted caramel"> Salted Caramel<br>
+ 			<input type="checkbox" name="topping" value="sugar free strawbeery"> Sugar Free Strawberry<br>
+		</td>
+	</tr>
+	<tr>
+		<td><input type="button" id="orderButton" value="Order" onclick="price()" onmouseover="changeColor(this)"/></td>
+	</tr>
+	
+	</table>	
+	<p id="message"class="output" ></p><p class="output" id="time"></p>
+	</form>
+<div id="image">
+ <img id="myimage" src="icecream.jpg" />
+
  </div>
 </body>
+<script type="text/javascript">	
+disableOrderButton();
+</script>
 </html>
-
-
